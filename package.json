@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "main": "build/index.js",
   "types": "build/index.d.ts",
+  "private": false,
   "dependencies": {
     "@react-native-community/cli-config": "13.5.1-alpha.0",
     "@react-native-community/cli-platform-android": "13.5.1-alpha.0",
