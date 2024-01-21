@@ -10,6 +10,16 @@ But builder beaver can do more than just a fancy UI:
 - ✨ Default options for quick builds
 - ⏳ Save time with typechecks
 
+> ⚠️ Builder can only build apps using EAS (cloud or local)
+
+## Getting started
+
+This will install `@beaverfy/builder` using your project's package manager:
+
+```sh
+npx expo install @beaverfy/builder
+```
+
 ## Configuring Builder
 
 Builder beaver can be configured by providing a `builder.yml` file
