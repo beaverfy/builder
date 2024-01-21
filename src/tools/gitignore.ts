@@ -2,7 +2,9 @@ import { readFileSync, writeFileSync } from "fs";
 import { BASE_FOLDER } from "../constants";
 
 export function checkGitIgnore() {
-  const content = readFileSync(`${process.cwd()}/.gitignore`);
+  const content = readFileSync(`${process.cwd()}/.gitignore`, {
+    encoding: "utf8",
+  });
   return content.includes(BASE_FOLDER);
 }
 
