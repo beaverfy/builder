@@ -1,2 +1,5 @@
+.yarn/cache
+node_modules
+logs
 src
 .env
