@@ -4,7 +4,9 @@ exports.autoFixGitIgnore = exports.checkGitIgnore = void 0;
 const fs_1 = require("fs");
 const constants_1 = require("../constants");
 function checkGitIgnore() {
-    const content = (0, fs_1.readFileSync)(`${process.cwd()}/.gitignore`);
+    const content = (0, fs_1.readFileSync)(`${process.cwd()}/.gitignore`, {
+        encoding: "utf8",
+    });
     return content.includes(constants_1.BASE_FOLDER);
 }
 exports.checkGitIgnore = checkGitIgnore;

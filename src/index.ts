@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import { prompt } from "enquirer";
 import Build from "./commands/build";
 import { runCleaner } from "./tools/cleaner";
