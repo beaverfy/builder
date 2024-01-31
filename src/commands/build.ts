@@ -12,7 +12,7 @@ import {
 } from "../tools/folder";
 import { autoFixGitIgnore, checkGitIgnore } from "../tools/gitignore";
 import { getConfiguration } from "../tools/settings";
-import { BUILD_FOLDER } from "../constants";
+import { BUILD_FOLDER, EAS_BUILD_COMMAND } from "../constants";
 import { BuildConfiguration } from "../types";
 import { askQuestions } from "../tools/questions";
 import { runTypecheck } from "../tools/typecheck";
@@ -134,7 +134,9 @@ export default async function Build() {
   const selectedProfile = buildProfiles.find(
     (e) => e[1] === buildOptions.profile
   )[1];
-  const command = `npx eas build --non-interactive --profile=${selectedProfile} --platform=${
+  const command = `${
+    settings?.eas?.command ?? EAS_BUILD_COMMAND
+  } build --non-interactive --profile=${selectedProfile} --platform=${
     buildOptions.platform
   } ${buildOptions.type == "local" ? "--local" : "--no-wait"}`;
   const buildArgs = command.split(" ");

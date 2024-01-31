@@ -66,7 +66,7 @@ export function moveBuildToFolder(
   };
 }
 
-export function resolveDestinationFolder(settings: Configuration) {
+export function resolveDestinationFolder(settings: Configuration | null) {
   if (settings?.builds?.folder == null) return null;
   switch (typeof settings.builds.folder) {
     case "string":

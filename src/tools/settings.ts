@@ -9,7 +9,11 @@ export function getConfiguration() {
     "utf8"
   );
 
-  return loadYAML(settingsFileContent, {
-    json: true,
-  }) as Configuration;
+  try {
+    return loadYAML(settingsFileContent, {
+      json: true,
+    }) as Configuration;
+  } catch (e) {
+    return null;
+  }
 }

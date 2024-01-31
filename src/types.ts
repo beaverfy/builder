@@ -25,5 +25,6 @@ export interface Configuration {
   default?: BuildConfiguration;
   eas?: {
     file?: string;
+    command?: string;
   };
 }
