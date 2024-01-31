@@ -36,8 +36,8 @@
   "scripts": {
     "prepare": "yarn run clean && tsc",
     "release": "dotenv release-it",
+    "postinstall": "yarn run clean && tsc",
     "clean": "rm -rf ./build && rm tsconfig.tsbuildinfo",
-    "build-app": "yarn run build && yarn run start",
     "start": "node ./build/index.js"
   },
   "devDependencies": {
