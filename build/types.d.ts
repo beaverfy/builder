@@ -22,6 +22,7 @@ export interface Configuration {
     default?: BuildConfiguration;
     eas?: {
         file?: string;
+        command?: string;
     };
 }
 //# sourceMappingURL=types.d.ts.map

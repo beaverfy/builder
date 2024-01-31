@@ -6,8 +6,13 @@ const fs_1 = require("fs");
 const constants_1 = require("../constants");
 function getConfiguration() {
     const settingsFileContent = (0, fs_1.readFileSync)(`${process.cwd()}/${constants_1.CONFIG_FILE}`, "utf8");
-    return (0, js_yaml_1.load)(settingsFileContent, {
-        json: true,
-    });
+    try {
+        return (0, js_yaml_1.load)(settingsFileContent, {
+            json: true,
+        });
+    }
+    catch (e) {
+        return null;
+    }
 }
 exports.getConfiguration = getConfiguration;

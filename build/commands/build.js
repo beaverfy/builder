@@ -16,7 +16,7 @@ const constants_1 = require("../constants");
 const questions_1 = require("../tools/questions");
 const typecheck_1 = require("../tools/typecheck");
 async function Build() {
-    var _a, _b, _c, _d, _e, _f;
+    var _a, _b, _c, _d, _e, _f, _g, _h;
     const Loader = (0, cli_tools_1.getLoader)();
     const logStream = new logger_1.Logger();
     const settings = (0, settings_1.getConfiguration)();
@@ -99,10 +99,10 @@ async function Build() {
                 : ""}app to EAS build`);
     //@ts-expect-error it's never ever
     const selectedProfile = buildProfiles.find((e) => e[1] === buildOptions.profile)[1];
-    const command = `npx eas build --non-interactive --profile=${selectedProfile} --platform=${buildOptions.platform} ${buildOptions.type == "local" ? "--local" : "--no-wait"}`;
+    const command = `${(_g = (_f = settings === null || settings === void 0 ? void 0 : settings.eas) === null || _f === void 0 ? void 0 : _f.command) !== null && _g !== void 0 ? _g : constants_1.EAS_BUILD_COMMAND} build --non-interactive --profile=${selectedProfile} --platform=${buildOptions.platform} ${buildOptions.type == "local" ? "--local" : "--no-wait"}`;
     const buildArgs = command.split(" ");
     const buildProcess = (0, child_process_1.spawn)(buildArgs[0], buildArgs.slice(1));
-    (_f = buildProcess.stdout) === null || _f === void 0 ? void 0 : _f.on("data", (data) => {
+    (_h = buildProcess.stdout) === null || _h === void 0 ? void 0 : _h.on("data", (data) => {
         const output = data.toString();
         logStream.log(output); // Write to log file
         if (output.includes("START_BUILD")) {

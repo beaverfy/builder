@@ -9,5 +9,5 @@ export declare function moveBuildToFolder(content: string, destFolder: string, l
     moved: boolean;
     filePath: string;
 };
-export declare function resolveDestinationFolder(settings: Configuration): string | null | undefined;
+export declare function resolveDestinationFolder(settings: Configuration | null): string | null | undefined;
 //# sourceMappingURL=folder.d.ts.map
